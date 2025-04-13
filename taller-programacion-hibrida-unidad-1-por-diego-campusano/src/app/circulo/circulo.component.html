@@ -1,0 +1,35 @@
+<ion-card> <!--Carta para componente circulo.-->
+  <ion-card-header>
+    <ion-card-title>Círculo</ion-card-title>
+    <ion-card-subtitle>Perímetro</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    El perímetro de un círculo es la longitud de la linea que forma el borde.
+  </ion-card-content>
+
+  <ion-grid> <!--Asegura de que la imagen de Circulo y su explicacion esten uno al lado de otro. Columnas 1 y 4 se aseguran que ambos elementos esten centrados-->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-text color="danger"> <!--Cambia el color del texto explicativo a rojo-->
+          Donde: <br/>
+          P: perímetro <br/>
+          d: diámetro <br/>
+          r: radio del círculo <br/>
+          π: 3.1416
+        </ion-text>
+      </ion-col>
+      <ion-col><ion-img src="../assets/Circulo.png" style="height: 120px"></ion-img></ion-col> <!--Imagen de circulo. Maneja el tamaño de la imagen al especificar 120px x auto-->
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-card>
+
+<ion-item> 
+  <ion-input [(ngModel)]="RadioInputStr" type="number" label="Radio (cm)" labelPlacement="stacked" placeholder="Radio"></ion-input> <!--Ionic Input que recibe y guarda el radio del circulo-->
+</ion-item>
+
+<ion-button (click)="CalcularPerimetroCirculo()">Calcular el Perímetro</ion-button> <!-- Ionic Button que llama a la funcion para el calculo del perimetro en base al radio dado-->
+<ion-item>{{Resultado}}</ion-item> <!--Muestra el resultado del calculo del perimetro llamando a la variable Resultado ubicada en el .ts-->

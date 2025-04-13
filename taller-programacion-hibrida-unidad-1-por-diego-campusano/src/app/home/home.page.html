@@ -1,0 +1,15 @@
+<ion-card><!--Carta principal del proyecto. Contiene todo el contenido-->
+  <ion-card-content>
+    <ion-item>
+      <ion-select (ionChange)="CambioFigura($event)" label="Figura Geométrica"> <!--Selector de figura. Llama a la funcion CambioFigura con este evento como parametro cuando se
+        cambia de figura-->
+        <ion-select-option value="Círculo">Círculo</ion-select-option> <!--Opcion de selector Circulo-->
+        <ion-select-option value="Triángulo">Triángulo</ion-select-option> <!--Opcion de selector Triangulo-->
+      </ion-select>
+    </ion-item>
+    <app-circulo *ngIf="SelectCirculo()"/> <!--Muestra este componente si la condicion de la funcion es verdadera-->
+    <app-triangulo *ngIf="SelectTriangulo()"/> <!--Muestra este componente si la condicion de la funcion es verdadera-->
+  </ion-card-content>
+</ion-card>
+
+

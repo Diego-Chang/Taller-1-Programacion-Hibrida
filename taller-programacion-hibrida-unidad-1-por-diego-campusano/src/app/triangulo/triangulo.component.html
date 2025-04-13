@@ -1,0 +1,21 @@
+<ion-card> <!--Carta para componente triangulo-->
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+    <ion-card-subtitle>Perimetro</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    El perimetro de un triángulo es la suma de las longitudes de sus tres lados. En otras palabras, es la medida total del contorno o borde del triángulo.
+  </ion-card-content>
+
+  <ion-img src="../assets/Triangulo.png" style="height: 150px"></ion-img> <!--Imagen de Triangulo. El estilo asegura que esta este centrada-->
+</ion-card>
+
+<ion-list> <!--Ionic Inputs que reciben y guardan las mediciones de los lados del triangulo-->
+    <ion-input [(ngModel)]="LadoAInputStr" type="number" label="Lado A (cm)" labelPlacement="stacked" placeholder="Lado A"></ion-input>
+    <ion-input [(ngModel)]="LadoBInputStr" type="number" label="Lado B (cm)" labelPlacement="stacked" placeholder="Lado B"></ion-input>
+    <ion-input [(ngModel)]="LadoCInputStr" type="number" label="Lado C (cm)" labelPlacement="stacked" placeholder="Lado C"></ion-input>
+</ion-list>
+
+<ion-button (click)="CalcularPerimetroTriangulo()">Calcular el Perímetro</ion-button> <!--Ionic Button que llama a la funcion para el calculo del perimetro en base a las mediciones dadas-->
+<ion-item>{{Resultado}}</ion-item> <!--Muestra el resultado del calculo del perimetro llamando a la variable Resultado ubicada en el .ts-->
